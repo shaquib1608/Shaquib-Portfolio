@@ -19,15 +19,23 @@ const ContactForm = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm("service_ko3hmpt", "template_ahbmmqd", form.current, {
-        publicKey: "I6HAT5mUZH7WHabGE",
+      .sendForm("service_i0nvg7b", "template_4j84zqa", form.current, {
+        publicKey: "rRtLJ26p_GETebYEo",
       })
       .then(
         () => {
           setEmail("");
           setName("");
           setMessage("");
+
           setSuccess("Message Sent Succesfully");
+          setTimeout(() => {
+            setSuccess("");
+
+          }, 2000)
+
+
+
         },
         (error) => {
           console.log("FAILED...", error.text);
